@@ -1,0 +1,129 @@
+.sign-content{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.sign {
+    justify-content: center;
+    margin: 100px 0;
+}
+
+.sign-container{
+    background-color: white;
+    padding: 50px 100px;
+    border-radius: 8px;
+}
+
+.sign-container h1 {
+    text-align: center;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+
+.sign-form{
+    display: flex;
+    flex-direction: column;
+    gap:10px
+}
+
+.sign-form label{
+    font-size: large;
+    font-weight: bold;
+}
+
+.sign-form input{
+    width: 300px;
+}
+
+.sign-form button{
+    margin-top: 10px;
+    align-self: flex-end;
+}
+
+.sign-container>p {
+    margin-top: 10px;
+    font-size: medium;
+    font-weight: 600;
+}
+
+.sign-container a {
+    color: blue;
+}
+
+.sign-container a:visited {
+    color: blue;
+}
+
+.sign-form [type="checkbox"]{
+    width: 15px;
+    height: 15px;
+    margin: 0;
+}
+
+.sign-form [type="date"]{
+    width: 100px;
+    padding: 5px;
+    margin: 0;
+}
+
+.sign-form > div {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sign-form legend {
+    font-size: x-large;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.sign-form legend:first-child {
+    margin-top: 0;
+}
+
+
+.invisible{
+    display: none;
+}
+
+.error{
+    color: red;
+    width: 300px;
+}
+
+@media screen and (max-width: 1366px) {
+
+}
+
+
+@media screen and (max-width: 1024px) {
+
+
+}
+
+
+@media screen and (max-width: 768px) {
+    
+
+}
+
+
+@media screen and (max-width: 640px) {
+    .sign-container{
+        padding: 20px 40px;
+    }
+
+
+    .sign-form input{
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .sign-form div{
+        width: 100%;
+    }
+}

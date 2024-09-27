@@ -1,0 +1,531 @@
+
+#scrollToTopBtn {
+    display: none; 
+    justify-content: center;
+    align-items: center;
+    position: fixed; 
+    bottom: 50%; 
+    right: 15%; 
+    z-index: 99; 
+    border: none; 
+    outline: none; 
+    background-color: white; 
+    color: black; 
+    cursor: pointer; 
+    padding: 10px;
+    border-radius: 100%; 
+}
+
+#scrollToTopBtn:hover {
+    background-color: gray;
+}
+
+
+/* Best offer */
+
+.best-offer {
+    margin: 50px auto 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+
+.best-offer  h1 {
+    font-size: 3em;
+}
+
+.best-offer p{
+    margin: 10px auto;
+    background-color: gray;
+    padding: 10px 0;
+    width: 150px;
+    border-radius: 12px;
+    font-weight: bold;
+    color: white;
+}
+
+.best-offer img{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+
+.best-offer > :last-child{
+    align-self: center;
+    position: relative;
+    max-width: 60%;
+}
+
+.best-offer > :last-child:hover #best-offer-cover{
+    opacity: 60%;
+}
+
+#best-offer-cover {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+#best-offer-cover > h1{
+    z-index: 10;
+    color: white;
+}
+
+
+/* Best brends */
+
+.best-brands {
+    width: 60%;
+}
+
+.best-brands > h1 {
+    padding-left: 10px;
+    margin-bottom: 20px;
+}
+
+.best-brands-logo {
+    margin-bottom: 100px;
+    display: grid;
+    grid-template-columns: repeat(3, 250px);
+    justify-items: center;
+    justify-content: space-between;
+    row-gap: 50px;
+}
+
+.best-brands-logo img {
+    object-fit: contain;
+    width: 250px;
+    height: 250px;
+    background-color: grey;
+    cursor: pointer;
+    box-shadow: 2px 2px 10px;
+}
+
+.best-brands img:hover {
+    scale: 1.1;
+    
+}
+
+/* Assortment */
+
+
+.assortment {
+    width: 60%;
+}
+
+.assortment h1 {
+    text-align: right;
+    padding-right: 10px;
+}
+
+.assortment-container {
+    margin: 20px 0 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%
+
+}
+
+.assortment-img {
+    width: 270px;
+    height: 330px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; 
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+.assortment-img img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover; /* Ensure the image covers the container without distortion */
+    border-radius: 4px;
+}
+
+#hovered-item-container {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0) rotateY(0);
+    transition: transform 0.5s ease;
+    z-index: 100; /* Above other content */
+    overflow: hidden; /* Ensure no overflow issues */
+}
+
+#hovered-item-container .assortment-img {
+    width: 650px;
+    height: 800px;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    transition: all 0.5s ease;
+}
+
+#hovered-item-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+/* Caurusel */
+
+
+.carousel-container {
+    max-width: 60%;
+    margin-bottom: 100px;
+}
+
+.carousel-container h1{
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.wrapper{
+    max-width: 100%;
+    position: relative;
+}
+
+.wrapper button{
+    height: 50px;
+    width: 50px;
+    background-color: white;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    font-size: 1.25rem;
+    transform: translateY(-50%);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
+    z-index: 99;
+}
+
+.wrapper button:first-child {
+    left: -25px;
+}
+
+.wrapper button:last-child {
+    right: -25px;
+}
+
+
+.wrapper .carousel {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100%/3) - 12px);
+    gap: 16px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: 0;
+}
+
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel :where(.card, .img) {
+    display: flex;
+    justify-content: center;
+}
+
+.carousel.no-transition{
+    scroll-behavior: auto;
+}
+
+.carousel.dragging {
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+}
+
+.carousel.dragging .card {
+    cursor: grab;
+    user-select: none;
+}
+
+.carousel .card {
+    scroll-snap-align: start;
+    height: 250px;
+    list-style: none;
+    background: #bdfcaa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-card-cover{
+    position: absolute;
+    height: 100px;
+    width: 100%;
+    background-color: #333b6a;
+    bottom: 3px;
+    clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 100%);
+    color: #bdfcaa;
+}
+
+.carousel-card-cover h3{
+    margin: 20px 0 20px 5px;
+}
+
+.carousel-card-cover span{
+    margin-left: 5px;
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.card .img{
+    width: 100%;
+    height: 220px;
+}
+
+.card .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.card:hover .img img {
+    scale: 1.1;
+}
+
+
+
+@media screen and (max-width: 1366px) {
+
+    #scrollToTopBtn {
+        right: 4%; 
+    }
+
+    /* Best offer */
+
+    .best-offer > :last-child{
+        max-width: 80%;
+    }
+
+    /* Best brends */
+
+    .best-brands {
+        width: 80%;
+    }
+
+
+    .best-brands-logo img{
+        width: 250px;
+        height: 250px;
+    }
+
+    /* Assortment */
+
+    .assortment {
+        width: 80%;
+    }
+    
+    
+    .assortment-img {
+        width: 250px;
+        height: 360px;
+    }
+    
+    .assortment-img img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+    
+    
+    #hovered-item-container .assortment-img {
+        width: 480px;
+        height: 640px;
+    }
+    
+    /* Caurusel */
+
+
+    .carousel-container {
+        max-width: 80%;
+    }
+    
+    
+    .carousel .card {
+        height: 210px;
+        padding-bottom: 15px;
+    }
+    
+    
+    
+    .card .img img {
+        height: 180px;
+    }
+    
+}
+
+
+
+
+@media screen and (max-width: 1024px) {
+
+    #scrollToTopBtn {
+        right: 2%; 
+    }
+
+    /* Best brends */
+
+    .best-brands-logo img{
+        width: 300px;
+        height: 300px;
+    }
+
+    .best-brands-logo {
+        margin-bottom: 50px;
+        grid-template-columns: repeat(2, 300px);
+        row-gap: 30px;
+    }
+
+    
+    .assortment-container {
+        margin-bottom: 50px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%
+    
+    }
+
+    .assortment-container div:last-child{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .assortment-img {
+        width: 300px;
+        height: 400px;
+    }
+
+
+    
+    
+    #hovered-item-container .assortment-img {
+        width: 450px;
+        height: 600px;
+    }
+    
+    /* Caurusel */
+
+    .wrapper .carousel {
+        grid-auto-columns: calc((100%/2) - 12px);
+    }
+
+    .carousel .card {
+        height: 250px;
+        padding-bottom: 15px;
+    }
+    
+    .card .img img {
+        height: 200px;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    
+
+    .best-offer {
+        margin-bottom: 50px;
+    }
+
+    .best-brands > h1 {
+        text-align: center;
+        padding:0;
+    }
+
+    .best-brands-logo img{
+        width: 250px;
+        height: 250px;
+    }
+
+    .best-brands-logo {
+        grid-template-columns: repeat(2, 250px);
+    }
+
+    .assortment h1 {
+        text-align: center;
+        padding:0;
+    }
+
+    .assortment-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+    }
+
+   
+    
+    .assortment-img {
+        width: 80%;
+        height: 80%;
+    }
+
+    #hovered-item-container .assortment-img {
+        width: 480px;
+        height: 640px;
+    }
+
+}
+
+
+@media screen and (max-width: 640px) {
+
+    .best-brands-logo {
+        grid-template-columns: repeat(1, 100%);
+    }
+
+    #hovered-item-container .assortment-img {
+        width: 300px;
+        height: 400px;
+    }
+
+    .wrapper .carousel {
+        grid-auto-columns: 100%;
+    }
+
+    .carousel .card {
+        height: 300px;
+        padding-bottom: 15px;
+    }
+
+    .card .img img {
+        height: 250px;
+    }
+}
+
+

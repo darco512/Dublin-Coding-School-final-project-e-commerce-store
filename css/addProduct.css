@@ -1,0 +1,301 @@
+.add-product-content{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.add-product{
+    display: flex;
+    margin: 100px auto;
+    gap: 100px;
+}
+
+.add-image-main{
+    width: 330px;
+    height: 440px;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.add-image-main img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.add-images-thumbnail{
+    width: 330px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0 5px;
+}
+
+.add-images-thumbnail img{
+    width: 100px;
+    height: 100px;
+    object-fit: fill;
+    cursor: pointer;
+}
+
+.add-image-main img {
+    width: 100%;
+    height: auto;
+}
+
+.add-images-container{
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+
+.add-images-container input{
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 99;
+    cursor: pointer;
+}
+
+.image-container {
+    position: relative;
+}
+
+.image-container button{
+    top: 5px;
+    right: 5px;
+    z-index: 99;
+    opacity: 0;
+}
+
+.image-container:hover button{
+    opacity: 100%;
+}
+
+
+.add-product-description {
+    width: 468px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.add-product-description > div{
+    display: flex;
+    gap: 20px;
+}
+
+.add-description-row{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.add-product-description input{
+    width: 200px;
+}
+
+.add-product-description select{
+    border: 2px solid black;
+    width: 222px;
+    padding: 0 10px;
+    border-radius: 5px;
+    height: 37px;
+}
+
+.add-sizes{
+    display: flex;
+    flex-direction: column;
+}
+
+.add-sizes label{
+    width: 222px;
+}
+
+.add-sizes > div:nth-child(2){
+    display: flex;
+    flex-direction: row;
+}
+
+.size-inputs-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.add-sizes-row{
+    position: relative;
+    display: flex;
+    gap: 20px;
+}
+
+.add-sizes-row button{
+    right: -25px;
+    top: 25%;
+}
+
+#add-size{
+    align-self: flex-end;
+    padding: 5px;
+}
+
+.add-product-description > button {
+    margin-top: 20px;
+    align-self: flex-start;
+    padding: 10px;
+}
+
+
+.error-add {
+    color: red;
+    display: none;
+}
+
+
+
+.delete-btn{
+    position: absolute;
+    padding: 0px 4px;
+    border-radius: 100%;
+    cursor: url("../images/trash-white.png"), auto;
+}
+
+@media screen and (max-width: 1366px) {
+
+}
+
+
+@media screen and (max-width: 1024px) {
+    .add-product{
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .error-add {
+        font-size: larger;
+    }
+
+    .add-images{
+        width: 60%;
+    }
+
+    .add-image-main{
+        width: 100%;
+        height: auto;
+    }
+
+    .add-images-thumbnail {
+        width: 100%;
+        margin: 0;
+    }
+
+    .add-images-thumbnail div{
+        width: calc((100%/3) - (20px/3));
+        height: auto;
+    }
+    
+
+    .add-images-thumbnail img{
+        width: 100%;
+        height: auto;
+    }
+
+    .add-product-description {
+        width: 80%;
+    }
+
+
+    .add-product-description input, .add-product-description select, .add-sizes label, .add-sizes .add-description-row{
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+    .add-sizes .add-description-row{
+        gap: 20px;
+    }
+
+    .add-description-row{
+        width: calc(50% - 10px);
+    }
+
+    .size-inputs-container input{
+        box-sizing: border-box;
+    }
+
+    .delete-btn{
+        font-size: x-large;
+        padding: 0 8px;
+    }
+
+    .add-sizes-row button{
+        right: -45px;
+        top: 8.5%;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    
+    .add-images{
+        width: 80%;
+    }
+}
+
+
+@media screen and (max-width: 640px) {
+    .add-product{
+        margin: 50px 0;
+    }
+
+    .error-add {
+        font-size: x-large;
+        text-align: center;
+    }
+
+    .add-images{
+        width: 100%;
+    }
+
+    .add-images-thumbnail div{
+        width: calc((100%/2) - (10px/2));
+    }
+
+    .add-product-description {
+        width: 75%;
+    }
+
+    .add-product-description>div{
+        flex-direction: column;
+    }
+
+    .add-product-description label, .add-sizes h4 {
+        font-size: xx-large;
+    }
+
+    .add-product-description input, .add-product-description select{
+        font-size: x-large;
+    }
+
+    .add-description-row{
+        width: 100%;
+    }
+
+    .delete-btn{
+        font-size: xx-large;
+        padding: 0 10px;
+    }
+
+
+    .add-sizes-row button{
+        right: -45px;
+        top: 12.5%
+    }
+}
